@@ -1,0 +1,18 @@
+version: "3.2"
+
+services:
+  php:
+    image: lombax85/kubetestphp:0.1
+    build:
+      context: ../
+      dockerfile: ./docker-compose/php/Dockerfile
+    ports:
+      - 80:80
+      - 443:443
+  mysql:
+    image: lombax85/kubetestmysql:0.1
+    build:
+      context: ../
+      dockerfile: ./docker-compose/mysql/Dockerfile
+    ports:
+      - 3306:3306
